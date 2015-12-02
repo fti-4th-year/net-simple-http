@@ -44,6 +44,7 @@ while True:
 			env = os.environ
 			env['QUERY_STRING'] = query
 			env['PATH_INFO'] = path_info
+			env['REQUES_METHOD'] = method
 			proc = subprocess.Popen(['./' + path], stdout=subprocess.PIPE, env=env)
 			data = proc.stdout.read()
 			mime = 'text/plain; charset=utf-8'
