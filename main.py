@@ -21,7 +21,7 @@ def is_exec(path):
 	return "executable" in subprocess.check_output(["file", "-Lb", path])
 
 def get_mime(path):
-	return subprocess.check_output(["file", "-Lib", path]).strip()
+	return subprocess.check_output(["mimetype", "-b", path]).strip() + '; charset=utf-8'
 
 def get_content(path):
 	file_handle = open(path, 'r')
